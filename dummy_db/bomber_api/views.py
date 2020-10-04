@@ -6,10 +6,10 @@ from .models import Parent, Student
 
 # viewsets for Parent
 class ParentViewSet(viewsets.ModelViewSet):
-    queryset = Parent.objects.all().order_by('name')
+    queryset = Parent.objects.filter(password=12345)
     serializer_class = ParentSerializer
     
 # viewsets for Student
 class StudentViewSet(viewsets.ModelViewSet):
-    queryset = Student.objects.all().order_by('name')
+    queryset = Student.objects.filter(parent_id=13)
     serializer_class = StudentSerializer
