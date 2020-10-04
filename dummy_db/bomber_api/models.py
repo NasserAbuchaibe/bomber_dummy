@@ -8,6 +8,8 @@ class Student(models.Model):
     name = models.CharField(max_length=60)
     score_project1 = models.DecimalField(max_digits=4, decimal_places=2)
     score_project2 = models.DecimalField(max_digits=4, decimal_places=2)
+    parent = models.ForeignKey('Parent', on_delete=models.CASCADE, default=None)
+
 
     def __str__(self):
         return self.name
@@ -19,8 +21,7 @@ class Parent(models.Model):
     email = models.EmailField(max_length=60)
     user_name = models.CharField(max_length=60)
     password = models.CharField(max_length=60)
-    child = models.ForeignKey('Student', on_delete=models.CASCADE, default=None)
-
+    
     def __str__(self):
         return self.name
 
