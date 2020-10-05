@@ -6,9 +6,9 @@ from .models import Parent, Student
 class ParentSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Parent
-        fields = ('name', 'email')
+        fields = ('id',)
 
 class StudentSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Student
-        fields = ('name', 'score_project1', 'score_project2', 'parent')
+        fields = ('name', 'score_project1', 'score_project2')
